@@ -1,4 +1,5 @@
 from django.contrib import messages
+from django.core.mail import mail_admins
 from django.core.paginator import Paginator
 from django.db.models import Count, Q
 from django.http import JsonResponse
@@ -6,6 +7,21 @@ from django.shortcuts import get_object_or_404, render
 
 from .forms import ContactMessageForm
 from .models import Category, Product
+
+
+def notify_new_message(contact_message):
+    try:
+        mail_admins(
+            subject=f"Yeni sifariş: {contact_message.name}",
+            message=(
+                f"Ad: {contact_message.name}\n"
+                f"Telefon: {contact_message.phone}\n\n"
+                f"Mesaj:\n{contact_message.message}"
+            ),
+            fail_silently=True,
+        )
+    except Exception:
+        pass
 
 
 def index(request):
@@ -79,7 +95,8 @@ def contact(request):
         is_ajax = request.headers.get("x-requested-with") == "XMLHttpRequest"
 
         if form.is_valid():
-            form.save()
+            saved_message = form.save()
+            notify_new_message(saved_message)
             conversation.append({"role": "user", "text": form.cleaned_data["message"]})
             conversation.append(
                 {
