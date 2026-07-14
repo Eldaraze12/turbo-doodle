@@ -1,15 +1,15 @@
 {% extends "shop/base.html" %}
 {% load static %}
 
-{% block title %}Şirin Anlar — Ev şirniyyatları, tortlar və pirojnalar{% endblock %}
+{% block title %}Biş - düş — Kulinariya kafeteriya{% endblock %}
 
 {% block content %}
 <section class="relative flex items-center min-h-[78vh] text-white bg-cover bg-center overflow-hidden"
          style="background-image: linear-gradient(rgba(58,42,32,.45), rgba(58,42,32,.55)), url('{% static 'shop/img/hero.png' %}');">
     <div class="container-brand max-w-[620px] py-16">
-        <span class="inline-block bg-white/[.18] border border-white/35 px-4 py-1.5 rounded-full font-semibold text-sm mb-5 animate-fade-in-up [animation-delay:0ms]">Əl ilə hazırlanır · Təzə · Səmimi</span>
-        <h1 class="text-white text-[clamp(2.4rem,6vw,4rem)] mb-4 animate-fade-in-up [animation-delay:120ms]">Hər tikəsində ev istiliyi olan şirniyyatlar</h1>
-        <p class="text-[1.15rem] mb-8 max-w-[48ch] opacity-95 animate-fade-in-up [animation-delay:240ms]">Tortlar, pirojnalar və klassik ev şirniyyatları — sevdiklərinizlə paylaşmaq üçün sevgi ilə bişirilir.</p>
+        <span class="inline-block bg-white/[.18] border border-white/35 px-4 py-1.5 rounded-full font-semibold text-sm mb-5 animate-fade-in-up [animation-delay:0ms]">Kulinariya kafeteriya · Təzə · Səmimi</span>
+        <h1 class="text-white text-[clamp(2.4rem,6vw,4rem)] mb-4 animate-fade-in-up [animation-delay:120ms]">Biş - düş — hər sifarişdə dad və diqqət</h1>
+        <p class="text-[1.15rem] mb-8 max-w-[48ch] opacity-95 animate-fade-in-up [animation-delay:240ms]">Təzə hazırlanan yeməklər, şirniyyatlar və içkilər — hər gün, hər sifariş üçün qayğı ilə hazırlanır.</p>
         <div class="flex gap-4 flex-wrap animate-fade-in-up [animation-delay:360ms]">
             <a href="{% url 'shop:menu' %}" class="btn-primary focus-ring">Menyuya bax</a>
             <a href="{% url 'shop:contact' %}" class="btn-outline-light focus-ring">Sifariş ver</a>
@@ -70,7 +70,7 @@
                     <svg class="w-7 h-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 12v10H4V12"/><path d="M2 7h20v5H2z"/><path d="M12 22V7"/><path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z"/><path d="M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"/></svg>
                 </div>
                 <h3 class="text-xl mb-2">Fərdi sifariş</h3>
-                <p class="text-muted">Doğum günü və xüsusi günlər üçün fərdi tortlar hazırlayırıq.</p>
+                <p class="text-muted">Doğum günü və xüsusi günlər üçün fərdi sifarişlər hazırlayırıq.</p>
             </div>
         </div>
     </div>
@@ -118,7 +118,7 @@
             <div class="absolute inset-0 bg-gradient-to-r from-brand-dark via-brand to-brand-dark bg-[length:200%_200%] animate-gradient-x opacity-40"></div>
             <div class="relative">
                 <h2 class="text-white">Xüsusi bir gününüz var?</h2>
-                <p class="opacity-90 my-2 mb-6">Fərdi tort və şirniyyat sifarişi üçün bizimlə əlaqə saxlayın.</p>
+                <p class="opacity-90 my-2 mb-6">Fərdi sifariş və xüsusi günlər üçün bizimlə əlaqə saxlayın.</p>
                 <a href="{% url 'shop:contact' %}" class="btn-primary !bg-surface !text-brand-dark hover:!bg-white focus-ring">Bizimlə əlaqə</a>
             </div>
         </div>

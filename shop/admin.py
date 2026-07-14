@@ -60,6 +60,6 @@ class ProductAdmin(admin.ModelAdmin):
         return "—"
 
 
-admin.site.site_header = "Şirin Anlar İdarəetmə"
-admin.site.site_title = "Şirin Anlar"
+admin.site.site_header = "Biş - düş İdarəetmə"
+admin.site.site_title = "Biş - düş"
 admin.site.index_title = "İdarəetmə paneli"
