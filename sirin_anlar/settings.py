@@ -5,7 +5,6 @@ import dj_database_url
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-# .env dosyasını yükle
 load_dotenv(BASE_DIR / ".env")
 
 SECRET_KEY = os.environ.get(
@@ -18,8 +17,6 @@ DEBUG = os.environ.get("DJANGO_DEBUG", "1") == "1"
 ALLOWED_HOSTS = ["*"]
 
 CSRF_TRUSTED_ORIGINS = [
-    "https://*.vusercontent.net",
-    "https://*.v0.dev",
     "https://*.vercel.app",
 ]
 
@@ -36,7 +33,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
-    "whitenoise.middleware.WhiteNoiseMiddleware",  # Whitenoise buraya eklendi (Arayüzün bozulmaması için)
+    "whitenoise.middleware.WhiteNoiseMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.common.CommonMiddleware",
     "django.middleware.csrf.CsrfViewMiddleware",
@@ -64,7 +61,6 @@ TEMPLATES = [
 
 WSGI_APPLICATION = "sirin_anlar.wsgi.application"
 
-# Veritabanı ayarı: Lokal ve Vercel uyumlu hale getirildi
 DATABASES = {
     "default": dj_database_url.config(
         default=f"sqlite:///{BASE_DIR / 'db.sqlite3'}",
@@ -87,7 +83,6 @@ USE_TZ = True
 STATIC_URL = "static/"
 STATIC_ROOT = BASE_DIR / "staticfiles"
 
-# Whitenoise için statik dosya depolama ayarı eklendi
 STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
 MEDIA_URL = "media/"
